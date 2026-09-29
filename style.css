@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #18202b;
+    --muted: #707987;
+    --primary: #635bff;
+    --secondary: #8b5cf6;
+    --border: #e6e9ef;
+}
+
+body.dark {
+    --bg: #10131a;
+    --card: #181c25;
+    --text: #ffffff;
+    --muted: #a4acba;
+    --border: #292f3b;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+
+/* TOP BAR */
+
+.topbar {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+#themeBtn {
+    border: none;
+    background: var(--bg);
+    font-size: 20px;
+    padding: 10px 13px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+/* MAIN */
+
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.small-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--primary);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 75px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-text {
+    max-width: 550px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.date-card {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+
+    min-width: 230px;
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 20px 50px rgba(99, 91, 255, 0.25);
+}
+
+.date-card h2 {
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 70px;
+}
+
+.stat-card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+}
+
+.stat-card .icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.stat-card p {
+    color: var(--muted);
+}
+
+.stat-card h2 {
+    margin-top: 7px;
+    font-size: 28px;
+}
+
+
+/* SECTION */
+
+.section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+
+    padding: 35px;
+
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+
+/* TIME GRID */
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.time-box {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.time-box label {
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.time-box input {
+    width: 100%;
+    padding: 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.time-box p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* BUTTON */
+
+.main-btn,
+.goal-input button,
+.timer-buttons button,
+.motivation button {
+
+    border: none;
+
+    background: var(--primary);
+    color: white;
+
+    padding: 13px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+}
+
+.main-btn:hover,
+.goal-input button:hover,
+.timer-buttons button:hover,
+.motivation button:hover {
+    opacity: 0.85;
+}
+
+
+/* PROGRESS */
+
+.progress-container {
+    margin-top: 25px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 15px;
+
+    background: var(--bg);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition: width 0.5s;
+}
+
+.message {
+    color: var(--muted);
+    margin-top: 15px;
+}
+
+
+/* GOALS */
+
+.goal-input {
+    display: flex;
+    gap: 10px;
+}
+
+.goal-input input {
+    flex: 1;
+
+    padding: 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.goal-input button {
+    margin-top: 0;
+}
+
+.goal-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    margin-top: 12px;
+}
+
+.goal-item span {
+    flex: 1;
+}
+
+.goal-item.completed span {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+.goal-delete {
+    border: none;
+    background: #ff5555;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+/* TIMER */
+
+.timer-section {
+    text-align: center;
+}
+
+.timer-section h2 {
+    margin-bottom: 10px;
+}
+
+.timer-section p {
+    color: var(--muted);
+}
+
+#timer {
+    font-size: 80px;
+    font-weight: bold;
+
+    margin: 30px 0;
+
+    color: var(--primary);
+}
+
+.timer-buttons button {
+    margin: 5px;
+}
+
+
+/* MOTIVATION */
+
+.motivation {
+    text-align: center;
+
+    padding: 60px 30px;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+
+    margin-bottom: 50px;
+}
+
+.quote-icon {
+    font-size: 70px;
+}
+
+.motivation h2 {
+    max-width: 700px;
+    margin: auto;
+    font-size: 30px;
+    line-height: 1.4;
+}
+
+.motivation button {
+    background: white;
+    color: var(--primary);
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    color: var(--muted);
+    line-height: 2;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 50px 0;
+    }
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .time-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 22px;
+    }
+
+    .goal-input {
+        flex-direction: column;
+    }
+
+    .goal-input button {
+        width: 100%;
+    }
+
+    #timer {
+        font-size: 55px;
+    }
+
+}
